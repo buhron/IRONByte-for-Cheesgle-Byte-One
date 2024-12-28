@@ -71,6 +71,7 @@ hr{
 
 .uninstall{
   color: red;
+  cursor: pointer;
 }
 
 .right{
