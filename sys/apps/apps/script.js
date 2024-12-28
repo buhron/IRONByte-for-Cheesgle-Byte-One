@@ -9,7 +9,7 @@ const appTemplate=  `
     <button class='back'><span class="material-symbols-outlined">arrow_back</span> Back</button>
     <div id="top">
       <img src="https://appserver.cheesgle.com/apps/calc/icon.png" id="appIcon">
-      <h2>Calculator<br><button id="stall">Install</button></h2>
+      <h2>Calculator<br><button id="stall"><span class="material-symbols-outlined">download</span> Install</button></h2>
     </div>
     <h4>A basic calculator for your Cheesgle Byte.</h4>
     <p>Created by Cheesgle<br>69420 total installs</p>
@@ -25,10 +25,11 @@ let homeApps = document.getElementById(`homeApps`),
 let phoneApps = []
 
 const ap = {
-  sameOrigin: `Administrator (Full phone access)`,
+  sameOrigin: `Administrator access`,
   openOtherApps: `Launch other apps`,
-  noHomeButton: `Disable home buttons`,
-  openSitesOnComputer: `Open sites on your computer`
+  noHomeButton: `Disable access to home button`,
+  openSitesOnComputer: `Open sites on the host device`,
+  manageApps: `Install and uninstall apps on your Byte`
 }
 
 function createElementFromHTML(htmlString) {
@@ -63,7 +64,7 @@ function fetchHomeApps() {
           // Title + Install button
           info.getElementsByTagName(`h2`)[0].innerHTML = ``
           info.getElementsByTagName(`h2`)[0].innerText = app.title
-          info.getElementsByTagName(`h2`)[0].innerHTML+= `<br><button id="stall">Install</button>`
+          info.getElementsByTagName(`h2`)[0].innerHTML+= `<br><button id="stall"><span class="material-symbols-outlined">download</span> Install</button>`
           // Description
           info.getElementsByTagName(`h4`)[0].innerText = app.description
           // Author and installs
@@ -91,7 +92,7 @@ function fetchHomeApps() {
           })
 
           if(phoneApps.includes(appPath)){
-            info.getElementsByTagName(`button`)[1].innerText = `Uninstall`
+            info.getElementsByTagName(`button`)[1].innerText = `<span class="material-symbols-outlined">delete</span> Uninstall`
             info.getElementsByTagName(`button`)[1].addEventListener('click', () => {
               let lcpa = JSON.parse(localStorage.getItem(`apps`))
               
@@ -120,7 +121,7 @@ function fetchHomeApps() {
 
               localStorage.setItem(`apps`, JSON.stringify(lcpa))
 
-              console.log(`Install`)
+              console.log(`[App Store] Installing app`)
               fetch(`https://appserver.cheesgle.com/install/${json[i][0]}`).then(()=>{}).catch(()=>{})
               
               info.hidden = true
