@@ -10,13 +10,13 @@ let phoneInfo = {
 
 // Sounds
 const sounds = {
-  appOpen: new Audio('/sys/sounds/appOpen.wav')
+  appOpen: new Audio('https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/sounds/appOpen.wav')
 };
 
 // Load app list
 let systemApps = []
 let apps = (JSON.parse(localStorage.getItem(`apps`)) || [])
-fetch(`/sys/systemApps.json`).then(async (r) => {
+fetch(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/systemApps.json`).then(async (r) => {
   if (r.status == 200) {
     let j = await r.json()
     for (let i = 0; i < j.length; i++) {
@@ -169,7 +169,7 @@ function startApp(location) {
   }).catch((e) => {
     launchingApp = false
     console.error(`[KERNEL] Couldn't start app ${location} ${e}, rebooting to OOBE/Boot`)
-    startApp(`/sys/apps/oobe`)
+    startApp(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/oobe`)
   })
 }
 
@@ -181,14 +181,14 @@ function softCloseApp() {
     type: "closing"
   })), "*")
   setTimeout(() => {
-    startApp(`/sys/apps/home`)
+    startApp(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/home`)
   }, 500)
 }
 
 if (localStorage.getItem('skip_boot')) {
-  startApp(`/sys/apps/home`)
+  startApp(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/home`)
 } else {
-  startApp(`/sys/apps/oobe`)
+  startApp(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/oobe`)
 }
 
 window.addEventListener("message", (event) => {
@@ -239,7 +239,7 @@ window.addEventListener("message", (event) => {
         })
         break;
       case `close`:
-        startApp(`/sys/apps/home`)
+        startApp(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-Onesys/apps/home`)
         break;
       case `openSiteOnComputer`:
         if (currentAppPermissions.includes(`openSitesOnComputer`)) {
