@@ -64,7 +64,7 @@ function fetchHomeApps() {
           // Title + Install button
           info.getElementsByTagName(`h2`)[0].innerHTML = ``
           info.getElementsByTagName(`h2`)[0].innerText = app.title
-          info.getElementsByTagName(`h2`)[0].innerHTML+= `<br><button id="stall"><span class="material-symbols-outlined">download</span> Install</button>`
+          info.getElementsByTagName(`h2`)[0].innerHTML+= `<br><button id="stall"> Install</button>`
           // Description
           info.getElementsByTagName(`h4`)[0].innerText = app.description
           // Author and installs
@@ -92,7 +92,7 @@ function fetchHomeApps() {
           })
 
           if(phoneApps.includes(appPath)){
-            info.getElementsByTagName(`button`)[1].innerText = `<span class="material-symbols-outlined">delete</span> Uninstall`
+            info.getElementsByTagName(`button`)[1].innerText = `Uninstall`
             info.getElementsByTagName(`button`)[1].addEventListener('click', () => {
               let lcpa = JSON.parse(localStorage.getItem(`apps`))
               
