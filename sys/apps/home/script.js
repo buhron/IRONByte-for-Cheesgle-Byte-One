@@ -53,7 +53,7 @@ window.addEventListener('message', async function(e) {
             if (app.icon) {
               html.getElementsByTagName(`img`)[0].src = `${apps[i]}/${app.icon}`
             } else {
-              html.getElementsByTagName(`img`)[0].src = `/sys/img/unknown.png`
+              html.getElementsByTagName(`img`)[0].src = `https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/img/unknown.png`
             }
             html.getElementsByTagName(`p`)[0].innerText = app.title
             appsContainer.appendChild(html)
