@@ -124,7 +124,7 @@ function startApp(location) {
     return a.localeCompare(b)
   })
 
-  fetch(`${location}/package.json`).then(async (r) => {
+  fetch(`${location}//package.json`).then(async (r) => {
     if (r.status == 200) {
       let pkg = await r.json()
 
