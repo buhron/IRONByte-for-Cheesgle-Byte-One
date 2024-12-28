@@ -28,15 +28,15 @@ window.addEventListener('message', async function(e) {
             if (app.icon) {
               html.getElementsByTagName(`img`)[0].src = `${data.phoneApps[i]}/${app.icon}`
             } else {
-              html.getElementsByTagName(`img`)[0].src = `/sys/img/unknown.png`
+              html.getElementsByTagName(`img`)[0].src = `https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/img/unknown.png`
             }
             html.getElementsByTagName(`b`)[0].innerText = app.title
-            console.log(data.phoneApps[i], data.phoneApps[i].startsWith(`/sys/apps/`))
-            html.getElementsByTagName(`span`)[0].innerHTML = `${data.phoneApps[i].startsWith(`/sys/apps/`) ?  `` : `<a class="uninstall"><span class="material-symbols-outlined">delete</span></a>`} v${Number(app.version)}`
+            console.log(data.phoneApps[i], data.phoneApps[i].startsWith(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/`))
+            html.getElementsByTagName(`span`)[0].innerHTML = `${data.phoneApps[i].startsWith(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/`) ?  `` : `<a class="uninstall"><span class="material-symbols-outlined">delete</span></a>`} v${Number(app.version)}`
             
             appsContainer.appendChild(html)
 
-            if(!data.phoneApps[i].startsWith(`/sys/apps/`)){
+            if(!data.phoneApps[i].startsWith(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/`)){
               html.getElementsByTagName(`a`)[0].addEventListener('click', () => {
                 html.remove()
                 let a = JSON.parse(localStorage.getItem(`apps`))
@@ -109,7 +109,7 @@ function createElementFromHTML(htmlString) {
 let appsContainer = document.getElementById(`appsContainer`)
 
 const appTemplate = `<div class="app">
-  <img class="appimg" src="/sys/apps/settings/icon.png">
+  <img class="appimg" src="https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/settings/icon.png">
   <span class="right"></span>
   <b>Settings</b>
 </div>`
