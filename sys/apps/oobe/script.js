@@ -57,7 +57,7 @@ function startOOBE(data){
         await toggleLoading(false)
         parent.postMessage({type:"close"},"*")
       }else{
-        localStorage.setItem(`wallpaper`,`/wallpapers/5.png`)
+        localStorage.setItem(`wallpaper`,`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/wallpapers/5.png`)
         localStorage.setItem(`apps`,`["https://appserver.cheesgle.com/apps/cheesgle"]`)
         fetch(`https://appserver.cheesgle.com/install/cheesgle`).then(()=>{}).catch(()=>{})
         
