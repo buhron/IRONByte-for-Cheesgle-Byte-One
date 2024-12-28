@@ -3,8 +3,8 @@ console.info(`[KERNEL] Script start`)
 // Phone object
 let phoneInfo = {
   version: 1.1,
-  name: 'Cheesgle Byte One',
-  contributors: `coding398`,
+  name: 'Cheesgle Byte One modded by IRONByte',
+  contributors: `buhron`,
   isLoggedIn: false
 }
 
@@ -124,7 +124,7 @@ function startApp(location) {
     return a.localeCompare(b)
   })
 
-  fetch(`${location}//package.json`).then(async (r) => {
+  fetch(`${location}/package.json`).then(async (r) => {
     if (r.status == 200) {
       let pkg = await r.json()
 
@@ -239,7 +239,7 @@ window.addEventListener("message", (event) => {
         })
         break;
       case `close`:
-        startApp(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-Onesys/apps/home`)
+        startApp(`https://buhron.github.io/IRONByte-for-Cheesgle-Byte-One/sys/apps/home`)
         break;
       case `openSiteOnComputer`:
         if (currentAppPermissions.includes(`openSitesOnComputer`)) {
